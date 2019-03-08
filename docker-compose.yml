@@ -1,0 +1,49 @@
+version: '2'
+services:
+  pg-persona:
+    image: personablockchain/core:pg_persona_testnet
+    container_name: pg-persona-testnet
+    restart: always
+    ports:
+      - '127.0.0.1:5432:5432'
+    volumes:
+      - db-data:/var/lib/postgresql/9.6/main
+    networks:
+      - persona-testnet-net
+    environment:
+      DB_PASSWORD: password
+      DB_NAME: persona_testnet
+      DB_USER: personaminer
+  persona-node:
+    image: personablockchain/core:node_persona_testnet
+    container_name: node-persona-testnet
+    restart: always
+    ports:
+      - "4001:4001"
+      - "4101:4101"
+      - "127.0.0.1:5001:5001"
+      - "127.0.0.1:8080:8080"
+    cap_add:
+      - SYS_NICE
+      - SYS_RESOURCE
+      - SYS_TIME
+    volumes:
+      - persona-node:/home/personaminer/persona-node
+    networks:
+      - persona-testnet-net
+    environment:
+      NETWORK: testnet
+      DB_HOST: pg-persona-testnet
+      DB_USER: personaminer
+      DB_PASSWORD: password
+      DB_NAME: persona_testnet
+    tty: true
+    links:
+     - pg-persona
+    depends_on:
+     - pg-persona
+volumes:
+  db-data:
+  persona-node:
+networks:
+  persona-testnet-net:
