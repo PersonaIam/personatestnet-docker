@@ -101,7 +101,7 @@ docker container ls
 2. Clone the repository from git.
 
 ```bash
-git clone git@github.com:dantirlie/personaim-docker.git personaim-docker
+git clone https://github.com/PersonaIam/personatestnet-docker.git personaim-docker
 ```
 
 3. Build postgresql image.
