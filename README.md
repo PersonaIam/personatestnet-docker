@@ -10,8 +10,8 @@ This repository contains Docker files of [PersonaIam](https://github.com/Persona
 
 ### Base Docker Images
 
-* [dockerhub/ubuntu 16.04](https://hub.docker.com/_/debian)
-* [dockerhub/debian](https://hub.docker.com/_/ubuntu)
+* [dockerhub/ubuntu 16.04](https://hub.docker.com/_/ubuntu)
+* [dockerhub/debian](https://hub.docker.com/_/debian)
 
 
 ### PersonaIam Relay
