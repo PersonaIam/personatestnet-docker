@@ -1,5 +1,9 @@
 ## PersonaIam testnet on Docker
 
+<p align="center">
+    <img src="./persona.png" width="100%" height="100%" />
+</p>
+
 
 This repository contains Docker files of [PersonaIam](https://github.com/PersonaIam/personatestnet) and [PostgreSQL](https://www.postgresql.org) for [Docker](https://www.docker.com/)'s [automated build](https://cloud.docker.com/repository/docker/personablockchain/core) published to the public [Docker Hub Registry](https://registry.hub.docker.com/).
 
